@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: postgres-order
+    environment:
+      POSTGRES_DB: order_db
+      POSTGRES_USER: order_user
+      POSTGRES_PASSWORD: order_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/init-scripts:/docker-entrypoint-initdb.d
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
