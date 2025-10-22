@@ -9,8 +9,8 @@ import java.util.UUID;
 
 public class Order {
     private final UUID id;
-    private final UUID customerId;
-    private final UUID restaurantId;
+    private UUID customerId;
+    private UUID restaurantId;
     private final UUID trackingId;
     private OrderStatus status;
     private final List<OrderItem> items;
@@ -57,4 +57,7 @@ public class Order {
     public Money getTotalPrice() { return totalPrice; }
     public OrderStatus getStatus() { return status; }
     public List<OrderItem> getItems() { return items; }
+    public UUID getCustomerId() {return customerId;}
+    public UUID getRestaurantId() {return restaurantId;}
+    public OffsetDateTime getCreatedAt() {return createdAt;}
 }
