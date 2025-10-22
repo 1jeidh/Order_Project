@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.example.order</groupId>
-            <artifactId>order-application-service</artifactId>
+            <artifactId>order-domain</artifactId>
             <version>1.0.0</version>
         </dependency>
 
