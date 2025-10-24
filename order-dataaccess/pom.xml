@@ -29,6 +29,7 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.example.order</groupId>
             <artifactId>order-application-service</artifactId>

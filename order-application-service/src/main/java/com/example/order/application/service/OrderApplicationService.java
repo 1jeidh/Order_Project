@@ -1,5 +1,6 @@
 package com.example.order.application.service;
 
+import org.springframework.stereotype.Service;
 import com.example.order.application.dto.*;
 import com.example.order.application.port.input.CreateOrderUseCase;
 import com.example.order.application.port.output.OrderRepository;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Service
 public class OrderApplicationService implements CreateOrderUseCase {
 
     private final OrderRepository orderRepository;
