@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/order_db
+    url: jdbc:postgresql://postgres:5432/order_db
     username: order_user
     password: order_pass
     driver-class-name: org.postgresql.Driver
@@ -13,11 +13,7 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-        default_schema: order
-        hbm2ddl:
-          create_namespaces: true
     show-sql: true
 
   application:
