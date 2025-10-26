@@ -29,6 +29,5 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: none
     restart: unless-stopped
 
-
 volumes:
   postgres_data:

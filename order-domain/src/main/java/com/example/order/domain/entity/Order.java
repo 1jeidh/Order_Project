@@ -27,6 +27,7 @@ public class Order {
         this.totalPrice = calculateTotal();
         this.status = OrderStatus.PENDING;
         this.createdAt = OffsetDateTime.now();
+        validate();
     }
 
     private Money calculateTotal() {
@@ -36,12 +37,24 @@ public class Order {
     }
 
     public void validate() {
+        if (items == null || items.isEmpty()) {
+            throw new IllegalArgumentException("Order must contain at least one item.");
+        }
+
+        for (OrderItem item : items) {
+            if (!item.getPrice().isGreaterThanZero()) {
+                throw new IllegalArgumentException("Item price must be positive.");
+            }
+        }
+
         if (!totalPrice.isGreaterThanZero()) {
             throw new IllegalStateException("Total price must be greater than zero.");
         }
+
         Money sum = items.stream()
                 .map(OrderItem::getSubTotal)
                 .reduce(Money.ZERO, Money::add);
+
         if (!sum.equals(totalPrice)) {
             throw new IllegalStateException("Order total mismatch with item subtotals.");
         }
