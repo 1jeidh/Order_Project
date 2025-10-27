@@ -22,4 +22,5 @@ Postman
 # Vấn đề của project
 - Integration Test chưa có / chưa chạy thành công
 - Chưa có test E2E tự động, chỉ dùng Postman thủ công để chứng minh được API chạy
-- mới chạy 1 service độc lập, chưa có Payment / Restaurant service đầy đủ
+- Mới chạy 1 service độc lập, chưa có Payment / Restaurant service đầy đủ
+- Chưa có giao diện
